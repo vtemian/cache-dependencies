@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 from uuid import uuid4
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.db import models
 from django.template import Context, Template
 from django.test import TestCase

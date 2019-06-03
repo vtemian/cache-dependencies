@@ -3,7 +3,7 @@ from __future__ import absolute_import, unicode_literals
 import re
 import copy
 
-from django.core import urlresolvers
+from django import urls
 from django.template.loader import render_to_string
 from django.template import (Library, Node, TemplateSyntaxError,
     VariableDoesNotExist, base)
@@ -140,7 +140,7 @@ class CacheNode(Node):
                 'cache': cache,
                 'nocache': nocache_handler,
                 'filters': filters,
-                'reverse': urlresolvers.reverse,
+                'reverse': urls.reverse,
                 '_': ugettext_lazy,
                 'ugettext_lazy': ugettext_lazy,
                 '_p': pgettext_lazy,
