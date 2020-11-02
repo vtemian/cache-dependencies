@@ -1,9 +1,14 @@
 [tool.poetry]
 name = "cache-dependencies"
-version = "0.7.7.49"
+version = "0.7.7.50"
 description = "Cache-dependencies (former Cache-tagging) allows you easily invalidate all cache records tagged with a given tag(s). Supports Django."
 authors = ["Ivan Zakrevsky <ivzak@yandex.ru>"]
 license = "BSD-1-Clause"
+packages = [
+    { include = "cache_dependencies" },
+    { include = "cache_tagging" },
+    { include = "django_cache_dependencies" },
+]
 
 [tool.poetry.dependencies]
 python = "^3.6"
