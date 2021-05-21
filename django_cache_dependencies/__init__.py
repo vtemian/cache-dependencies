@@ -8,13 +8,17 @@ from django.conf import settings
 from django.core import signals as core_signals
 from django.core.cache import DEFAULT_CACHE_ALIAS
 from django.db.models import signals as model_signals
-from django.utils.functional import curry
 
 from cache_dependencies.tagging import CacheTagging
 from cache_dependencies.relations import RelationManager, ThreadSafeRelationManagerDecorator
 from cache_dependencies.locks import DependencyLock
 from cache_dependencies.transaction import TransactionManager, ThreadSafeTransactionManagerDecorator
 from cache_dependencies.nocache import NoCache
+
+try:
+    from django.utils.functional import curry
+except:
+    from functools import partial as curry
 
 try:
     str = unicode  # Python 2.* compatible
